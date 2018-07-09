@@ -18,6 +18,7 @@ public class ZooKeeper_Constructor_Usage_Simple implements Watcher {
         									new ZooKeeper_Constructor_Usage_Simple());
         System.out.println(zookeeper.getState());
         try {
+            // 等待监听事件处理完
             connectedSemaphore.await();
         } catch (InterruptedException e) {}
         System.out.println("ZooKeeper session established.");
