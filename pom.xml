@@ -17,8 +17,8 @@
 		<maven-compiler-plugin.version>2.0.2</maven-compiler-plugin.version>
 		<maven-jar-plugin.version>2.3.2</maven-jar-plugin.version>
 
-		<zookeeper.version>3.4.5</zookeeper.version>
-		<zkclient.version>0.2-SNAPSHOT</zkclient.version>
+		<zookeeper.version>3.4.3</zookeeper.version>
+		<zkclient.version>0.1</zkclient.version>
 	</properties>
 
 	<build>
@@ -79,6 +79,20 @@
 				<groupId>org.apache.zookeeper</groupId>
 				<artifactId>zookeeper</artifactId>
 				<version>${zookeeper.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>com.sun.jmx</groupId>
+						<artifactId>jmxri</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.sun.jdmk</groupId>
+						<artifactId>jmxtools</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.jms</groupId>
+						<artifactId>jms</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>com.github.sgroschupf</groupId>
@@ -123,9 +137,9 @@
 			<artifactId>curator-recipes</artifactId>
 		</dependency>
 		<dependency>
-				<groupId>org.apache.curator</groupId>
-				<artifactId>curator-test</artifactId>
-			</dependency>
+			<groupId>org.apache.curator</groupId>
+			<artifactId>curator-test</artifactId>
+		</dependency>
 	</dependencies>
 
 </project>
